@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_account_user.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_baseline_local_movies_24.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_language.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_qr_code.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_rating.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_rating_red.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/ic_wallet.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_background.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_booked_seat.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_empty_seat.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_line.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_primary_button.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_rectangle_blue_grey_left.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_rectangle_blue_grey_right.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_secondary_button.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_selected_seat.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/drawable/shape_ticket.xml" value="0.3880208333333333" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/font/montserrat.xml" value="0.40208333333333335" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_checkout.xml" value="0.5" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_checkout_success.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_choose_seat.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_edit_profile.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_movie_detail.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_movie_history.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_my_wallet.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_on_boarding1.xml" value="0.2907608695652174" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_on_boarding2.xml" value="0.2907608695652174" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_on_boarding3.xml" value="0.2907608695652174" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_register.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_register_photo.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_seat.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_setting.xml" value="0.3625" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_splash_screen.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/activity_ticket.xml" value="0.5" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/fragment_dashboard.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/fragment_ticket.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/row_item_checkout.xml" value="0.5" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/row_item_checkout_white.xml" value="0.371875" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/row_item_coming_soon.xml" value="1.25" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/row_item_now_playing.xml" value="0.5" />
+        <entry key="..\:/Users/harun/AndroidStudioProjects/MOVApps/app/src/main/res/layout/row_item_play.xml" value="0.371875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

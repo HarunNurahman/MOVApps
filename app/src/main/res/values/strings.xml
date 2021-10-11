@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">MOV Apps</string>
+    <string name="skip_introduction">SKIP INTRODUCTION</string>
+    <string name="continue_">CONTINUE</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="now_playing_desc">Easier to know which movies\nare playing</string>
+    <string name="pre_sale">Pre Sale</string>
+    <string name="pre_sale_desc">Don\'t worry about missing\nthe latest movie</string>
+    <string name="cashless">Cashless</string>
+    <string name="cashless_desc">Easy-and-Secure transaction\nusing e-wallet</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Create New Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email Address</string>
+    <string name="upload_later">Upload Later</string>
+    <string name="profile_picture">Profile Photo</string>
+    <string name="welcome">Welcome,\nHarunamanya</string>
+    <string name="upload"><![CDATA[Save & Continue]]></string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="storyboard">Storyboard</string>
+    <string name="who_played">Who Played?</string>
+    <string name="choose_seat">Choose Seat(s)</string>
+    <string name="buy_ticket">Buy Ticket(s)</string>
+    <string name="purchase">Purchase Now</string>
+    <string name="cancel_payment">Cancel Payment</string>
+    <string name="when">When</string>
+    <string name="datetime"><![CDATA[Date & Time]]></string>
+    <string name="cinema">Cinema</string>
+    <string name="item">Item(s)</string>
+    <string name="total_payment">Total Payment</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="active_balance">Active Balance</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="history">My History</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
