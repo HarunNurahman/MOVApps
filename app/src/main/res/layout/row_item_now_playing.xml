@@ -30,23 +30,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/montserrat"
         android:text="Genre"
         android:textColor="@color/white"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_title" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
     <TextView
         android:id="@+id/txtview_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/ic_rating"
+        android:drawablePadding="4dp"
         android:fontFamily="@font/montserrat"
+        android:gravity="center"
         android:text="7"
         android:textColor="@color/white"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
@@ -55,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
