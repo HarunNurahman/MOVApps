@@ -17,6 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -33,7 +34,7 @@ import com.project.movapps.sign.signin.User
 import com.project.movapps.util.Preferences
 import java.util.*
 
-class Register_PhotoActivity : AppCompatActivity(), PermissionListener {
+class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
 
     var REQUEST_IMAGE_CAPTURE = 1
     var statusAdd: Boolean = false
@@ -73,8 +74,7 @@ class Register_PhotoActivity : AppCompatActivity(), PermissionListener {
                 photo.setImageResource(R.drawable.ic_add)
                 imageprofile.setImageResource(R.drawable.user_pic)
             } else {
-                Dexter.withActivity(this).withPermission(Manifest.permission.CAMERA)
-                    .withListener(this).check()
+                ImagePicker.with(this).cameraOnly().start()
             }
         }
 
@@ -130,20 +130,42 @@ class Register_PhotoActivity : AppCompatActivity(), PermissionListener {
         Toast.makeText(this, "Hurry? Click Upload Later", Toast.LENGTH_LONG).show()
     }
 
-    @SuppressLint("MissingSuperCall")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            var bitmap = data?.extras?.get("data") as Bitmap
-            statusAdd = true
+//    @SuppressLint("MissingSuperCall")
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+//            var bitmap = data?.extras?.get("data") as Bitmap
+//            statusAdd = true
+//
+//            filePath = data.data!!
+//            val profile = findViewById<ImageView>(R.id.img_profile)
+//            val register = findViewById<Button>(R.id.btn_register)
+//            val add = findViewById<ImageView>(R.id.btn_add)
+//            Glide.with(this).load(bitmap).apply(RequestOptions.circleCropTransform()).into(profile)
+//
+//            register.visibility = View.VISIBLE
+//            add.setImageResource(R.drawable.ic_delete)
+//        }
+//    }
 
-            filePath = data.data!!
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            //Image Uri will not be null for RESULT_OK
             val profile = findViewById<ImageView>(R.id.img_profile)
-            val register = findViewById<Button>(R.id.btn_register)
+            val register = findViewById<Button>(R.id.btn_save)
             val add = findViewById<ImageView>(R.id.btn_add)
-            Glide.with(this).load(bitmap).apply(RequestOptions.circleCropTransform()).into(profile)
+
+            statusAdd = true
+            filePath = data?.data!!
+            Glide.with(this).load(filePath).apply(RequestOptions.circleCropTransform()).into(profile)
 
             register.visibility = View.VISIBLE
             add.setImageResource(R.drawable.ic_delete)
+
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
         }
     }
 
