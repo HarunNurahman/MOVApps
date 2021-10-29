@@ -67,15 +67,15 @@ class DashboardFragment : Fragment() {
             FirebaseDatabase.getInstance("https://mov-apps-c31eb-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 .getReference("Film")
 
-        val user = view?.findViewById<TextView>(R.id.txtview_user)
-        val balance = view?.findViewById<TextView>(R.id.txtview_balance)
+        val username = view?.findViewById<TextView>(R.id.txtview_user)
+        val saldo = view?.findViewById<TextView>(R.id.txtview_balance)
         val profile = view?.findViewById<ImageView>(R.id.img_profile_pic)
         val nowplaying = view?.findViewById<RecyclerView>(R.id.view_now_playing)
         val comingsoon = view?.findViewById<RecyclerView>(R.id.view_coming_soon)
 
-        user?.setText(preferences.getValues("name"))
+        username?.setText(preferences.getValues("username"))
         if (!preferences.getValues("balance").equals("")) {
-            currency(preferences.getValues("balance")!!.toDouble(), balance!!)
+            currency(preferences.getValues("balance")!!.toDouble(), saldo!!)
         }
 
         Glide.with(this).load(preferences.getValues("url"))
@@ -83,7 +83,6 @@ class DashboardFragment : Fragment() {
 
         nowplaying?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         comingsoon?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
         getData()
     }
 

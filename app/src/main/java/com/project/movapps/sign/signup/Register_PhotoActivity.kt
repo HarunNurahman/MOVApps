@@ -18,8 +18,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.Dexter
@@ -34,7 +33,7 @@ import com.project.movapps.sign.signin.User
 import com.project.movapps.util.Preferences
 import java.util.*
 
-class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
+class Register_PhotoActivity : AppCompatActivity(), PermissionListener {
 
     var REQUEST_IMAGE_CAPTURE = 1
     var statusAdd: Boolean = false
@@ -60,13 +59,15 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
             FirebaseDatabase.getInstance("https://mov-apps-c31eb-default-rtdb.asia-southeast1.firebasedatabase.app/")
         mFirebaseDatabase = mFirebaseInstance.getReference("User")
 
-        val welcome = findViewById<TextView>(R.id.txt_welcome)
+        val welcome = findViewById<TextView>(R.id.txt_welcomename)
         val photo = findViewById<ImageView>(R.id.btn_add)
         val imageprofile = findViewById<ImageView>(R.id.img_profile)
         val register = findViewById<Button>(R.id.btn_save)
         val uploadlater = findViewById<Button>(R.id.btn_upload_later)
 
-        welcome.text = "Welcome\n"+intent.getStringExtra("name")
+        user = intent.getParcelableExtra("data")!!
+        welcome.text = "" + user.name
+
         photo.setOnClickListener {
             if (statusAdd) {
                 statusAdd = false
@@ -74,7 +75,9 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
                 photo.setImageResource(R.drawable.ic_add)
                 imageprofile.setImageResource(R.drawable.user_pic)
             } else {
-                ImagePicker.with(this).cameraOnly().start()
+                ImagePicker.with(this)
+                    .cameraOnly()    //User can only capture image using Camera
+                    .start()
             }
         }
 
@@ -87,7 +90,7 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
 
         register.setOnClickListener {
             if (filePath != null) {
-                var progressDialog = ProgressDialog(this)
+                val progressDialog = ProgressDialog(this)
                 progressDialog.setTitle("Uploading...")
                 progressDialog.show()
 
@@ -97,11 +100,11 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
                     Toast.makeText(this, "Uploaded", Toast.LENGTH_LONG).show()
 
                     ref.downloadUrl.addOnSuccessListener {
-                        preferences.setValues("url", it.toString())
+                        saveToFirebase(it.toString())
                     }
-                    finishAffinity()
-                    var intent = Intent(this, HomeActivity::class.java)
-                    startActivity(intent)
+//                    finishAffinity()
+//                    var intent = Intent(this, HomeActivity::class.java)
+//                    startActivity(intent)
                 }.addOnFailureListener {
                     progressDialog.dismiss()
                     Toast.makeText(this, "Upload Failed", Toast.LENGTH_LONG).show()
@@ -114,12 +117,39 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
         }
     }
 
-    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+    private fun saveToFirebase(url: String) {
+        mFirebaseDatabase.child(user.username!!).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                user.url = url
+                mFirebaseDatabase.child(user.username!!).setValue(user)
+
+                preferences.setValues("name", user.name.toString())
+                preferences.setValues("username", user.username.toString())
+                preferences.setValues("balance", "")
+                preferences.setValues("url", "")
+                preferences.setValues("email", user.email.toString())
+                preferences.setValues("status", "1")
+                preferences.setValues("url", url)
+
+                finishAffinity()
+                val intent = Intent(this@Register_PhotoActivity, HomeActivity::class.java)
+                startActivity(intent)
             }
-        }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Register_PhotoActivity, "" + error, Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
+//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
+//            takePictureIntent.resolveActivity(packageManager)?.also {
+//                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+//            }
+//        }
+
+        ImagePicker.with(this).cameraOnly().start()
     }
 
     override fun onPermissionDenied(response: PermissionDeniedResponse?) {
@@ -157,7 +187,8 @@ class  Register_PhotoActivity : AppCompatActivity(), PermissionListener {
 
             statusAdd = true
             filePath = data?.data!!
-            Glide.with(this).load(filePath).apply(RequestOptions.circleCropTransform()).into(profile)
+            Glide.with(this).load(filePath).apply(RequestOptions.circleCropTransform())
+                .into(profile)
 
             register.visibility = View.VISIBLE
             add.setImageResource(R.drawable.ic_delete)
