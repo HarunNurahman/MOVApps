@@ -24,7 +24,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Harunamanya" />
+            tools:text="Username" />
 
         <TextView
             android:id="@+id/txtview_balance"
