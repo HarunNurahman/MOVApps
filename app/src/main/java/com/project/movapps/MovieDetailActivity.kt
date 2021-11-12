@@ -10,8 +10,8 @@ import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import com.project.movapps.checkout.ChooseSeatActivity
 import com.project.movapps.home.dashboard.PlayAdapter
-import com.project.movapps.model.Film
-import com.project.movapps.model.Play
+import com.project.movapps.home.model.Film
+import com.project.movapps.home.model.Play
 
 class MovieDetailActivity : AppCompatActivity() {
 

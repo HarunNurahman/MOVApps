@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.project.movapps.R
-import com.project.movapps.model.Play
+import com.project.movapps.home.model.Play
 
     class PlayAdapter(private var data: List<Play>, private val listener: (Play) -> Unit) :
     RecyclerView.Adapter<PlayAdapter.ViewHolder>() {

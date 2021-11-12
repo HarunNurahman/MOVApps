@@ -16,9 +16,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.*
 import com.project.movapps.MovieDetailActivity
 import com.project.movapps.R
-import com.project.movapps.home.dashboard.ComingSoonAdapter
-import com.project.movapps.home.dashboard.NowPlayingAdapter
-import com.project.movapps.model.Film
+import com.project.movapps.home.model.Film
 import com.project.movapps.util.Preferences
 import java.text.NumberFormat
 import java.util.*
@@ -68,14 +66,14 @@ class DashboardFragment : Fragment() {
                 .getReference("Film")
 
         val username = view?.findViewById<TextView>(R.id.txtview_user)
-        val saldo = view?.findViewById<TextView>(R.id.txtview_balance)
+        val balance = view?.findViewById<TextView>(R.id.txtview_balance)
         val profile = view?.findViewById<ImageView>(R.id.img_profile_pic)
         val nowplaying = view?.findViewById<RecyclerView>(R.id.view_now_playing)
         val comingsoon = view?.findViewById<RecyclerView>(R.id.view_coming_soon)
 
         username?.setText(preferences.getValues("username"))
         if (!preferences.getValues("balance").equals("")) {
-            currency(preferences.getValues("balance")!!.toDouble(), saldo!!)
+            currency(preferences.getValues("balance")!!.toDouble(), balance!!)
         }
 
         Glide.with(this).load(preferences.getValues("url"))

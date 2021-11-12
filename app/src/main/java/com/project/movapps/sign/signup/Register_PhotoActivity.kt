@@ -125,7 +125,7 @@ class Register_PhotoActivity : AppCompatActivity(), PermissionListener {
 
                 preferences.setValues("name", user.name.toString())
                 preferences.setValues("username", user.username.toString())
-                preferences.setValues("balance", "")
+                preferences.setValues("balance", "0")
                 preferences.setValues("url", "")
                 preferences.setValues("email", user.email.toString())
                 preferences.setValues("status", "1")

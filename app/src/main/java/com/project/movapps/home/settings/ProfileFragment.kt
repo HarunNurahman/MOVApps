@@ -1,5 +1,6 @@
 package com.project.movapps.home.settings
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.project.movapps.R
 import com.project.movapps.util.Preferences
+import com.project.movapps.wallet.MyWalletActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,12 +56,16 @@ class ProfileFragment : Fragment() {
         var name: TextView? = view?.findViewById(R.id.txt_name)
         var email: TextView? = view?.findViewById(R.id.txt_email)
         var profilepic: ImageView? = view?.findViewById(R.id.img_profile)
+        var mywallet: TextView? = view?.findViewById(R.id.txt_mywallet)
 
         name?.text = preferences.getValues("name")
         email?.text = preferences.getValues("email")
 
         Glide.with(this).load(preferences.getValues("url")).apply(RequestOptions.circleCropTransform()).into(profilepic!!)
 
+        mywallet?.setOnClickListener {
+            startActivity(Intent(activity, MyWalletActivity::class.java))
+        }
     }
 
     companion object {

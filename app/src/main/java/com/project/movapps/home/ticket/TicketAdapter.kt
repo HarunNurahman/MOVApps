@@ -4,14 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.project.movapps.R
-import com.project.movapps.model.Checkout
-import java.text.NumberFormat
-import java.util.*
+import com.project.movapps.checkout.model.Checkout
 
 class TicketAdapter(private var data: List<Checkout>, private val listener: (Checkout) -> Unit) :
     RecyclerView.Adapter<TicketAdapter.ViewHolder>() {

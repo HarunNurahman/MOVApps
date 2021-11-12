@@ -1,15 +1,13 @@
-package com.project.movapps.home.dashboard
+package com.project.movapps.checkout.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.project.movapps.R
-import com.project.movapps.model.Checkout
+import com.project.movapps.checkout.model.Checkout
 import java.text.NumberFormat
 import java.util.*
 
@@ -21,14 +19,14 @@ class CheckoutAdapter(private var data: List<Checkout>, private val listener: (C
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CheckoutAdapter.ViewHolder {
+    ): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         contextAdapter = parent.context
         val inflaterView = layoutInflater.inflate(R.layout.row_item_checkout, parent, false)
         return ViewHolder(inflaterView)
     }
 
-    override fun onBindViewHolder(holder: CheckoutAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(data[position], listener, contextAdapter, position)
     }
 

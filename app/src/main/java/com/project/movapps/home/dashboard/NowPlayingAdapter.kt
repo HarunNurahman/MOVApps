@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.project.movapps.R
-import com.project.movapps.model.Film
+import com.project.movapps.home.model.Film
 
 class NowPlayingAdapter(private var data: List<Film>, private val listener: (Film) -> Unit) :
     RecyclerView.Adapter<NowPlayingAdapter.ViewHolder>() {
@@ -35,14 +35,12 @@ class NowPlayingAdapter(private var data: List<Film>, private val listener: (Fil
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val movieTitle: TextView = view.findViewById(R.id.txt_title)
         private val movieGenre: TextView = view.findViewById(R.id.txtview_genre_movie)
-        private val movieRating: TextView = view.findViewById(R.id.txtview_rating)
 
         private val moviePoster: ImageView = view.findViewById(R.id.img_poster)
 
         fun bindItem(data: Film, listener: (Film) -> Unit, context : Context, position : Int) {
             movieTitle.setText(data.judul)
             movieGenre.setText(data.genre)
-            movieRating.setText(data.rating)
 
             Glide.with(context).load(data.poster).into(moviePoster)
 

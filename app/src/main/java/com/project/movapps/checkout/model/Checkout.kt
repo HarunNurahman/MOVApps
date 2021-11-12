@@ -1,4 +1,4 @@
-package com.project.movapps.model
+package com.project.movapps.checkout.model
 
 import android.os.Parcel
 import android.os.Parcelable

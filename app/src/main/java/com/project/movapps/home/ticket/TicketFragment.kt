@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.project.movapps.R
 import com.project.movapps.home.dashboard.ComingSoonAdapter
-import com.project.movapps.model.Film
+import com.project.movapps.home.model.Film
 import com.project.movapps.util.Preferences
 
 // TODO: Rename parameter arguments, choose names that match

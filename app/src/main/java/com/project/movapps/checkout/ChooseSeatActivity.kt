@@ -7,11 +7,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.project.movapps.CheckoutActivity
 import com.project.movapps.MovieDetailActivity
 import com.project.movapps.R
-import com.project.movapps.model.Checkout
-import com.project.movapps.model.Film
+import com.project.movapps.checkout.model.Checkout
+import com.project.movapps.home.model.Film
 
 class ChooseSeatActivity : AppCompatActivity() {
 
@@ -75,7 +74,7 @@ class ChooseSeatActivity : AppCompatActivity() {
         }
 
         buyticket.setOnClickListener {
-            var intent = Intent(this, CheckoutActivity::class.java).putExtra("data", dataList)
+            var intent = Intent(this, CheckoutActivity::class.java).putExtra("data", dataList).putExtra("datas", data)
             startActivity(intent)
         }
     }

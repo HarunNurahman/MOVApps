@@ -35,7 +35,7 @@
             android:drawableStart="@drawable/ic_wallet"
             android:drawablePadding="8dp"
             android:fontFamily="@font/montserrat"
-            tools:text="IDR 0"
+            android:text="IDR 0"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
