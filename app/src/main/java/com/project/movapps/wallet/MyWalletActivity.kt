@@ -41,7 +41,7 @@ class MyWalletActivity : AppCompatActivity() {
 
         }
         topup.setOnClickListener {
-
+            startActivity(Intent(this, TopUpActivity::class.java))
         }
 
     }

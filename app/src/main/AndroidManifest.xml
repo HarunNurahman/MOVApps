@@ -24,9 +24,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <!--        <activity-->
-        <!--            android:name=".home.settings.SettingActivity"-->
-        <!--            android:exported="true" />-->
+        <activity
+            android:name=".wallet.TopUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".wallet.TopUpSuccessActivity"
+            android:exported="true" />
         <activity
             android:name=".home.ticket.TicketActivity"
             android:exported="true" />
